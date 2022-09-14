@@ -18,7 +18,7 @@ RUN mvn package
 # Production Image
 ########################################
 # FROM tomcat:9-jdk8-openjdk-slim
-FROM tomcat:9-jdk11-openjdk-slim
+FROM tomcat:9-jdk11-corretto-al2
 
 COPY --from=build --chown=1001:0 /app/target/customers-tomcat-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
